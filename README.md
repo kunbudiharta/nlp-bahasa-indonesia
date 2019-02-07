@@ -101,6 +101,40 @@ $ (.env) python setup.py sdist
 $ (.env) pip install dist/id_model-1.0.0.tar.gz
 ```
 
+### Check Meta Data Model
+```bash
+Python 3.6.5 (default, Apr 25 2018, 14:23:58) 
+[GCC 4.2.1 Compatible Apple LLVM 9.1.0 (clang-902.0.39.1)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import spacy
+>>> import json
+>>> nlp = spacy.load('id_model')
+>>> print(json.dumps(nlp.meta, indent=4))
+{
+    "lang": "id",
+    "name": "model",
+    "version": "1.0.0",
+    "spacy_version": ">=2.0.18,<3.0.0",
+    "description": "Model Bahasa Indonesia sederhana menggunakan corpus Universal Dependencies",
+    "author": "Kun Budiharta",
+    "email": "kun@beritagar.id",
+    "url": "https://beritagar.id",
+    "license": "MIT",
+    "vectors": {
+        "width": 0,
+        "vectors": 0,
+        "keys": 0,
+        "name": null
+    },
+    "pipeline": [
+        "tagger",
+        "parser",
+        "ner"
+    ]
+}
+>>> 
+```
+
 ### Penggunaan
 ```bash
 $ (.env) python
